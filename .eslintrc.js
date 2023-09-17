@@ -7,11 +7,12 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'xo',
         'plugin:react/recommended',
-        'plugin:i18next/recommended'
+        'plugin:i18next/recommended',
     ],
     // Overrides: [
     // 	{
@@ -64,7 +65,8 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': 2
+        'i18next/no-literal-string': 2,
+        'max-len': ['error', {ignoreComments: true}],
     },
     globals: {
         __IS_DEV__: true,
