@@ -75,6 +75,7 @@ module.exports = {
             code: 100,
             ignoreComments: true,
         }],
+        'object-curly-spacing': ['error', 'always'],
     },
     globals: {
         __IS_DEV__: true,
