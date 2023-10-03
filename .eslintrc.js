@@ -75,6 +75,7 @@ module.exports = {
             ignoreComments: true,
         }],
         'object-curly-spacing': ['error', 'always'],
+        'capitalized-comments': 'off',
     },
     globals: {
         __IS_DEV__: true,

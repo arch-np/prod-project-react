@@ -1,21 +1,23 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button, ThemeButton } from './Button';
+import { AppLink, AppLinkTheme } from './AppLink';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 // import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'shared/Button',
-    component: Button,
+    title: 'shared/AppLink',
+    component: AppLink,
+    args: {
+        to: '/',
+    },
     // Parameters: {
     //     layout: 'centered',
     // },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof AppLink>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -24,26 +26,43 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {
         children: 'Text',
+        theme: AppLinkTheme.PRIMARY,
     },
 };
 
-export const Clear: Story = {
+export const Secondary: Story = {
     args: {
-        ...Primary.args,
-        theme: ThemeButton.CLEAR,
+        children: 'Text',
+        theme: AppLinkTheme.SECONDARY,
     },
 };
 
-export const Outline: Story = {
+export const Red: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.OUTLINE,
+        theme: AppLinkTheme.RED,
     },
 };
-export const OutlineDark: Story = {
+export const PrimaryDark: Story = {
     args: {
         children: 'Text',
-        theme: ThemeButton.OUTLINE,
+        theme: AppLinkTheme.PRIMARY,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const SecondaryDark: Story = {
+    args: {
+        children: 'Text',
+        theme: AppLinkTheme.SECONDARY,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const RedDark: Story = {
+    args: {
+        children: 'Text',
+        theme: AppLinkTheme.RED,
     },
     decorators: [ThemeDecorator(Theme.DARK)],
 };

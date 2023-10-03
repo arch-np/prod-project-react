@@ -1,49 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Button, ThemeButton } from './Button';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { NotFoundPage } from './NotFoundPage';
 // import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'shared/Button',
-    component: Button,
-    // Parameters: {
-    //     layout: 'centered',
-    // },
+    title: 'pages/NotFoundPage',
+    component: NotFoundPage,
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
     tags: ['autodocs'],
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof NotFoundPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
-    args: {
-        children: 'Text',
-    },
+export const Normal: Story = {
+    args: {},
 };
 
-export const Clear: Story = {
-    args: {
-        ...Primary.args,
-        theme: ThemeButton.CLEAR,
-    },
-};
-
-export const Outline: Story = {
-    args: {
-        children: 'Text',
-        theme: ThemeButton.OUTLINE,
-    },
-};
-export const OutlineDark: Story = {
-    args: {
-        children: 'Text',
-        theme: ThemeButton.OUTLINE,
-    },
+export const Dark: Story = {
+    args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
 };
