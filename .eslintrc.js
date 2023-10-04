@@ -9,7 +9,12 @@ module.exports = {
         es2021: true,
         jest: true,
     },
-    extends: ['xo', 'plugin:react/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
+    extends: [
+        'xo',
+        'plugin:react/recommended',
+        'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
+    ],
     // Overrides: [
     // 	{
     // 		env: {
