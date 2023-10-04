@@ -13,6 +13,7 @@ module.exports = {
         'xo',
         'plugin:react/recommended',
         'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
     ],
     // Overrides: [
     // 	{
@@ -79,6 +80,7 @@ module.exports = {
             ignoreComments: true,
         }],
         'object-curly-spacing': ['error', 'always'],
+        'capitalized-comments': 'off',
     },
     globals: {
         __IS_DEV__: true,
