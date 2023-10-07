@@ -44,3 +44,6 @@ yarn-error.log*
 !.vscode/extensions.json
 # storybook
 /storybook-static/
+# loki reports
+/.loki/report.html
+/.loki/report.json
