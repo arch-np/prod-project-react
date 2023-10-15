@@ -1,18 +1,15 @@
-import React, { Suspense, useEffect } from 'react';
+import React, { Suspense, useState } from 'react';
 import './styles/index.scss';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppRouter } from 'app/providers/router';
 import { NavBar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar';
+import { Modal } from 'shared/ui/Modal/Modal';
 
 const App = () => {
     const { theme } = useTheme();
-    // UseEffect(() => {
-    //     if (Math.random() < 0.5) {
-    //         throw new Error('Error');
-    //     }
-    // }, []);
+
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback=''>
