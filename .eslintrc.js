@@ -77,7 +77,7 @@ module.exports = {
             ignoreAttribute: ['data-testid', 'to'],
         }],
         'max-len': ['error', {
-            code: 100,
+            code: 120,
             ignoreComments: true,
         }],
         'object-curly-spacing': ['error', 'always'],
