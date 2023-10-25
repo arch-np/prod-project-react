@@ -63,7 +63,12 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        // https://stackoverflow.com/questions/68626276/node-must-be-provided-when-reporting-error-if-location-is-not-provided-error-with-eslint
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': [
+            'warn',
+            { argsIgnorePattern: '^_' },
+        ],
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'warn',
@@ -84,6 +89,7 @@ module.exports = {
         'capitalized-comments': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+        'react/display-name': 'off',
     },
     globals: {
         __IS_DEV__: true,
