@@ -3,6 +3,9 @@ import { themeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import ProfilePage from 'pages/ProfilePage/ui/ProfilePage';
 import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import avatarImg from 'shared/assets/tests/storybook.jpg';
 // import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -20,10 +23,36 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Normal: Story = {
     args: {},
-    decorators: [storeDecorator({})],
+    decorators: [storeDecorator({
+        profile: {
+            form: {
+                username: 'Admin',
+                age: 30,
+                country: Country.Belarus,
+                lastname: 'Fut',
+                first: 'Smit',
+                city: 'fdg',
+                currency: Currency.EUR,
+                avatar: avatarImg,
+            },
+        },
+    })],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [themeDecorator(Theme.DARK), storeDecorator({})],
+    decorators: [themeDecorator(Theme.DARK), storeDecorator({
+        profile: {
+            form: {
+                username: 'Admin',
+                age: 30,
+                country: Country.Belarus,
+                lastname: 'Fut',
+                first: 'Smit',
+                city: 'fdg',
+                currency: Currency.EUR,
+                avatar: avatarImg,
+            },
+        },
+    })],
 };
