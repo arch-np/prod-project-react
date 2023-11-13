@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Select } from 'shared/ui/Select/Select';
 import { Currency } from '../../model/types/currency';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 
 interface CurrencySelectProps {
     className?: string;
@@ -11,16 +11,14 @@ interface CurrencySelectProps {
     readonly?: boolean;
 }
 
-const options = [
-    { value: Currency.RUB, content: Currency.RUB },
-    { value: Currency.EUR, content: Currency.EUR },
-    { value: Currency.USD, content: Currency.USD },
-];
-
 export const CurrencySelect = memo(({
     className, value, onChange, readonly,
 }: CurrencySelectProps) => {
     const { t } = useTranslation();
+
+    const currencyOptions = useMemo(() =>
+        Object.entries(Currency).map(val => ({ value: val[0], content: val[1] }))
+    , []);
 
     const onChangeHandler = useCallback((value: string) => {
         onChange?.(value as Currency);
@@ -30,7 +28,7 @@ export const CurrencySelect = memo(({
         <Select
             className={classNames('', {}, [className])}
             label={t('Укажите валюту')}
-            options={options}
+            options={currencyOptions}
             value={value}
             onChange={onChangeHandler}
             readonly={readonly}
