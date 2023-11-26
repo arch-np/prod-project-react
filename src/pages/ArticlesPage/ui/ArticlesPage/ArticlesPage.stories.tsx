@@ -4,7 +4,7 @@ import ArticlesPage from './ArticlesPage';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'shared/ArticlesPage',
+    title: 'pages/ArticlesPage',
     component: ArticlesPage,
     // Parameters: {
     //     layout: 'centered',

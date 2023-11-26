@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { themeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
@@ -60,4 +60,11 @@ export const OnlyTextDark: Story = {
         text: 'Lorem ipsum dolor sit amet',
     },
     decorators: [themeDecorator(Theme.DARK)],
+};
+export const SizeL: Story = {
+    args: {
+        title: 'Hello, world!',
+        text: 'Lorem ipsum dolor sit amet',
+        size: TextSize.L,
+    },
 };
