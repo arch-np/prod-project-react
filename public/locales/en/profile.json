@@ -16,5 +16,6 @@
   "Имя и фамилия не указаны": "Name and surname not specified",
   "Некорректный возраст": "uncorrected age",
   "Некорректный регион": "uncorrected region",
-  "Серверная ошибка при сохранении": "server error while saving"
+  "Серверная ошибка при сохранении": "server error while saving",
+  "Пользователь не найден": "Пользователь не найден"
 }

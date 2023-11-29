@@ -20,7 +20,7 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
     state => state.articleDetailsComments || commentsAdapter.getInitialState(),
 );
 
-const articleDetailsCommentsSlice = createSlice({
+const articleDetailsCommentsNormalizeSlice = createSlice({
     name: 'articleDetailsCommentsSlice',
     initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
         isLoading: false,
@@ -53,5 +53,5 @@ const articleDetailsCommentsSlice = createSlice({
     },
 });
 
-export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;
+export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsNormalizeSlice;
 
