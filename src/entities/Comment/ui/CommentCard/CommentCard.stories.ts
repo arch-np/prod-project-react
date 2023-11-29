@@ -6,7 +6,7 @@ import { themeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 
 const meta = {
-    title: 'entities/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
 } satisfies Meta<typeof CommentCard>;
 
@@ -16,7 +16,6 @@ type Story = StoryObj<typeof meta>;
 const user:User = {
     id: '1',
     username: 'admin',
-    avatar: 'https://www.plugincim.com/assets/images/products/csgo-plugin-listesi/362.png',
 };
 
 const comment:Comment
