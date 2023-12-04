@@ -1,3 +1,4 @@
+import { User } from 'entities/User';
 
 export enum ArticleBlockType{
     CODE='CODE',
@@ -35,10 +36,16 @@ export enum ArticleType{
     WEATHER='WEATHER',
 }
 
+export enum ArticleView{
+    LIST='LIST',
+    TILE='TILE'
+}
+
 export interface Article {
     id: string;
     title: string;
     subtitle: string;
+    user:User;
     img: string;
     views: number;
     createdAt: string;
