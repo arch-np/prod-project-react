@@ -30,7 +30,8 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
         view,
         onViewClick,
     } = props;
-    // Замыкание для передачи и обработки типа view
+
+    // Замыкание для передачи и обработки типа view, аналог  onClick={() => onClickHandler(viewType)}
     const onClick = (newView:ArticleView) => () => {
         onViewClick?.(newView);
     };
