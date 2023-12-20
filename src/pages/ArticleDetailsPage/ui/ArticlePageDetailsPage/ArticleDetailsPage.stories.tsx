@@ -27,6 +27,10 @@ const article:Article = {
     img: 'https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-1024.png',
     views: 1483,
     createdAt: '19.11.2023',
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     type: [ArticleType.IT],
     blocks: [
         {

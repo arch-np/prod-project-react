@@ -5,7 +5,7 @@ import { Article } from 'entities/Article';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 
 const meta = {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
 } satisfies Meta<typeof ArticleDetails>;
 
@@ -19,6 +19,10 @@ const article:Article = {
     img: 'https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-1024.png',
     views: 1483,
     createdAt: '19.11.2023',
+    user: {
+        id: '1',
+        username: 'admin',
+    },
     type: [ArticleType.IT],
     blocks: [
         {

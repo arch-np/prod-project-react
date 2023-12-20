@@ -4,25 +4,23 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager';
 import { $api } from 'shared/api/api';
-import { To } from '@remix-run/router';
-import { NavigateOptions } from 'react-router/dist/lib/context';
+import { scrollRestorationReducer } from 'features/ScrollRestoration';
 
 export function createReduxStore(
     initialState?:StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions)=> void,
 ) {
     const rootReducer:ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        scrollRestoration: scrollRestorationReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);
 
     const extraArg:ThunkExtraArg = {
         api: $api,
-        navigate,
     };
 
     const store = configureStore({
