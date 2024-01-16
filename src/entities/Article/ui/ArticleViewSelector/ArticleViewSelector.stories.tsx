@@ -3,7 +3,7 @@ import { ArticleViewSelector } from './ArticleViewSelector';
 import { ArticleView } from 'entities/Article';
 
 const meta = {
-    title: 'shared/ArticleViewSelector',
+    title: 'entities/Article/ArticleViewSelector',
     component: ArticleViewSelector,
     tags: ['autodocs'],
 } satisfies Meta<typeof ArticleViewSelector>;
