@@ -1181,6 +1181,12 @@
       "userId": "1",
       "text": "test",
       "id": "EIESkhD"
+    },
+    {
+      "articleId": "8",
+      "userId": "1",
+      "text": "test comment",
+      "id": "C0fE1kJ"
     }
   ],
   "users": [
