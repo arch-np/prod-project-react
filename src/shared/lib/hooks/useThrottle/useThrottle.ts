@@ -1,5 +1,5 @@
 import { useCallback, useRef, useEffect } from 'react';
-
+// Выполнение задания в заданный промежуток времени
 export function useThrottle(callback:(...args:any[])=>void, delay:number) {
     const throttleRef = useRef(false);
     const timeoutRef = useRef<any>(null);
