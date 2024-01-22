@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Article, ArticleList, ArticleView } from '/entities/Article';
-import { ArticleBlockType, ArticleType } from '../../model/types/article';
-import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article, ArticleBlockType, ArticleType, ArticleView } from '../../model/types/article';
+import { ArticleList } from './ArticleList';
 
 const meta = {
     title: 'entities/Article/ArticleList',
@@ -20,7 +19,7 @@ const article: Article = {
     type: [ArticleType.IT],
     user: {
         id: '1',
-        username: 'Ulbi tv',
+        username: 'test',
     },
     blocks: [
         {
