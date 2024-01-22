@@ -50,6 +50,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'pp-checker',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -91,6 +92,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'react/display-name': 'off',
         'no-undef': 'off',
+        'pp-checker/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

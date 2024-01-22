@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ProfileCard } from 'entities/Profile';
+import { ProfileCard } from './ProfileCard';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import avatarImg from 'shared/assets/tests/storybook.jpg';
