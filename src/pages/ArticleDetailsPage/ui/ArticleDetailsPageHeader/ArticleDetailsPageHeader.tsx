@@ -1,13 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetailsPageHeader.module.scss';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RoutesPath } from 'shared/config/routeConfig/routeConfig';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getCanEditArticle } from 'pages/ArticleDetailsPage/model/selectors/article';
+import { getCanEditArticle } from '../../model/selectors/article';
 import { getArticleDetailsData } from 'entities/Article';
+import { HStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -31,20 +31,20 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames('', {}, [className])}>
             <Button
                 theme={ButtonTheme.OUTLINE}
                 onClick={onBackToList}
             >
                 {t('Назад к списку')}
             </Button>
-            {canEdit && (<Button
-                className={cls.editBtn}
-                theme={ButtonTheme.OUTLINE}
-                onClick={onEditArticle}
-            >
-                {t('Редактировать')}
-            </Button>)}
-        </div>
+            {canEdit && (
+                <Button
+                    theme={ButtonTheme.OUTLINE}
+                    onClick={onEditArticle}
+                >
+                    {t('Редактировать')}
+                </Button>)}
+        </HStack>
     );
 });

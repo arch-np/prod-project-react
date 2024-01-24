@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { themeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+// eslint-disable-next-line pp-checker/path-checker
 import ProfilePage from 'pages/ProfilePage/ui/ProfilePage';
 import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Country } from 'entities/Country';

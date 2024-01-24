@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ArticleEditPage from 'pages/ArticleEditPage/ui/ArticleEditPage/ArticleEditPage';
+// eslint-disable-next-line pp-checker/path-checker
+import { ArticleEditPage } from 'pages/ArticleEditPage';
 
 const meta = {
     title: 'shared/ArticleEditPage',

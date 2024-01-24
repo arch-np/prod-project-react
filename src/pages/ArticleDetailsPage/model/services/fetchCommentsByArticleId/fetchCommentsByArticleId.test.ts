@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from './fetchCommentsByArticleId';
 describe('fetchCommentsByArticleId.test', () => {
     test('error fetch', async () => {
         const thunk = new TestAsyncThunk(fetchCommentsByArticleId);
