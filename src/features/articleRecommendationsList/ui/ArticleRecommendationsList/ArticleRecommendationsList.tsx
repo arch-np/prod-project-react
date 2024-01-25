@@ -5,6 +5,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { ArticleList } from 'entities/Article';
 import { VStack } from 'shared/ui/Stack';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationApi';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 interface ArticleRecommendationsListProps {
     className?: string;
@@ -15,8 +16,12 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
     const { t } = useTranslation('article');
     const { data: articles, isLoading, error } = useArticleRecommendationsList(5);
 
-    if (error || isLoading) {
-        return null;
+    if (error || !articles) {
+        return <Text text={t('Не удалось загрузить рекомендации')}/>;
+    }
+
+    if (isLoading) {
+        return <Skeleton height={'300px'} width={'100%'}/>;
     }
 
     return (
