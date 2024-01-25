@@ -7,7 +7,7 @@ import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/ArticleDetailsPage/ArticleDetailsPage',
     component: ArticleDetailsPage,
     // Parameters: {
     //     layout: 'centered',

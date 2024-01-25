@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
 
 const meta = {
-    title: 'shared/ArticleEditPage',
+    title: 'pages/ArticleEditPage/ArticleEditPage',
     component: ArticleEditPage,
     tags: ['autodocs'],
 } satisfies Meta<typeof ArticleEditPage>;

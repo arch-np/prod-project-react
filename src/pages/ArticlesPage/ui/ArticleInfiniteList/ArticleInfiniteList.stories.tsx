@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticlesPageFilters } from './ArticlesPageFilters';
+import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 const meta = {
-    title: 'pages/ArticlesPage/ArticlesPageFilters',
-    component: ArticlesPageFilters,
+    title: 'pages/ArticlesPage/ArticleInfiniteList',
+    component: ArticleInfiniteList,
     tags: ['autodocs'],
-} satisfies Meta<typeof ArticlesPageFilters>;
+} satisfies Meta<typeof ArticleInfiniteList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
