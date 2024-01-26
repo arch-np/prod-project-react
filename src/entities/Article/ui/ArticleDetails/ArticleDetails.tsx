@@ -3,7 +3,7 @@ import cls from './ArticleDetails.module.scss';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slices/articleDetailsSlice';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
@@ -122,7 +122,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <VStack gap={'16'} className={classNames(cls.ArticleDetails, {}, [className])}>
+            <VStack gap={'16'} max className={classNames(cls.ArticleDetails, {}, [className])}>
                 {content}
             </VStack>
         </DynamicModuleLoader>
