@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ArticleDetailsComments.module.scss';
 import { useTranslation } from 'react-i18next';
-import React, { memo, useCallback } from 'react';
+import React, { memo, Suspense, useCallback } from 'react';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { CommentList } from 'entities/Comment';
@@ -15,10 +15,11 @@ import {
     fetchCommentsByArticleId,
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { VStack } from 'shared/ui/Stack';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -50,7 +51,10 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
                 className={cls.commentTitle}
                 title={t('Комментарии')}
             />
-            <AddCommentForm onSendComment={onSendComment}/>
+            <Suspense fallback={<div><Skeleton width={'100%'} height={'300px'}/></div>}>
+                <AddCommentForm onSendComment={onSendComment}/>
+            </Suspense>
+
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}
