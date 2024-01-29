@@ -1193,6 +1193,18 @@
       "userId": "1",
       "text": "sdfsdf",
       "id": "sFdzHPm"
+    },
+    {
+      "articleId": "14",
+      "userId": "1",
+      "text": "test",
+      "id": "_AoLW9z"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "test23",
+      "id": "RHpYGA-"
     }
   ],
   "users": [
@@ -1200,23 +1212,37 @@
       "id": "1",
       "username": "admin",
       "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://www.plugincim.com/assets/images/products/csgo-plugin-listesi/362.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Archy",
+      "first": "Archy2",
       "lastname": "Fut",
       "age": 33,
-      "currency": "RUB",
+      "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
       "username": "admin",

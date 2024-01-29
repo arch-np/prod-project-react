@@ -23,7 +23,7 @@ describe('initArticlesPage.test', () => {
         await thunk.callThunk(new URLSearchParams(window.location.search));
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        // expect(fetchArticlesList).toHaveBeenCalledWith({ page: 1 });
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
     test('initArticlesPage not called', async () => {
         const thunk = new TestAsyncThunk(initArticlesPage, {

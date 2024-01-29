@@ -3,9 +3,8 @@ import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator
 import { themeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
-
-// import '../../src/app/styles/index.scss';
-// import '!style-loader!css-loader!sass-loader!../../src/app/styles/variables/global.scss';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { storeDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const preview: Preview = {
     parameters: {
@@ -21,15 +20,9 @@ const preview: Preview = {
         StyleDecorator,
         themeDecorator(Theme.LIGHT),
         RouterDecorator,
+        SuspenseDecorator,
+        storeDecorator({}),
     ],
-    // decorators: [
-    //     Story => (
-    //         <div style={{ margin: '3em' }}>
-    //             {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
-    //             <Story />
-    //         </div>
-    //     ),
-    // ],
 };
 
 export default preview;

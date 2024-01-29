@@ -4,7 +4,7 @@ import { Article } from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<
     Article,
-    string,
+    string | undefined,
     ThunkConfig<string>
 >(
     'articleDetails/fetchArticleById',
@@ -20,6 +20,10 @@ export const fetchArticleById = createAsyncThunk<
 
             if (!response.data) {
                 throw new Error('no data');
+            }
+
+            if (!articleId) {
+                throw new Error('no articleId');
             }
 
             return response.data;
