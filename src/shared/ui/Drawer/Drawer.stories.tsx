@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Popover } from './Popover';
+import { Drawer } from './Drawer';
 
 const meta = {
-    title: 'shared/Popover',
-    component: Popover,
+    title: 'shared/Overlay',
+    component: Drawer,
     tags: ['autodocs'],
-} satisfies Meta<typeof Popover>;
+} satisfies Meta<typeof Drawer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Normal: Story = {
     args: {
-        trigger: <></>,
-        children: <></>,
+        children: (<div></div>),
     },
 };
