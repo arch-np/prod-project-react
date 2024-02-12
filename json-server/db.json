@@ -1281,5 +1281,42 @@
       "username": "Vasa",
       "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedBack": "",
+      "id": "fij4Zwm"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 4,
+      "feedBack": "ergerger",
+      "id": "_BqAZ_L"
+    },
+    {
+      "userId": "1",
+      "articleId": "21",
+      "rate": 4,
+      "feedBack": "",
+      "id": "Y3dIf9A"
+    }
   ]
 }

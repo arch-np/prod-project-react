@@ -7,7 +7,7 @@ import { Icon } from '@/shared/ui/Icon/Icon';
 interface StarRatingProps {
     className?: string;
     onSelect?: (starsCount:number)=>void;
-    selectStarts?: number;
+    selectStars?: number;
     size?: number;
 }
 
@@ -18,11 +18,11 @@ export const StarRating = memo((props: StarRatingProps) => {
         className,
         onSelect,
         size = 30,
-        selectStarts = 0,
+        selectStars = 0,
     } = props;
 
-    const [currentStarsCount, setCurrentStarsCount] = useState<number>(0);
-    const [isSelected, setIsSelected] = useState<boolean>(Boolean(selectStarts));
+    const [currentStarsCount, setCurrentStarsCount] = useState<number>(selectStars);
+    const [isSelected, setIsSelected] = useState<boolean>(Boolean(selectStars));
 
     const onHover = (starsCount:number) => () => {
         if (!isSelected) {
