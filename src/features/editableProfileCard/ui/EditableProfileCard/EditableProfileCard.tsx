@@ -25,6 +25,7 @@ import {
 } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from '@/shared/ui/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
+import { ProfileRating } from '@/features/profileRating';
 
 interface EditableProfileCardProps {
     className?: string;
@@ -122,6 +123,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
+                <ProfileRating profileId={id ?? ''}/>
             </VStack>
         </DynamicModuleLoader>
 

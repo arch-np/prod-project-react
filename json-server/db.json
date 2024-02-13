@@ -1318,5 +1318,21 @@
       "feedBack": "",
       "id": "Y3dIf9A"
     }
+  ],
+  "profile-ratings": [
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 4,
+      "feedBack": "",
+      "id": "XIMwpA3"
+    }
   ]
 }
