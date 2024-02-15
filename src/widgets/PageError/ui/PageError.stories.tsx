@@ -6,7 +6,7 @@ import { PageError } from './PageError';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'widget/PageError',
+    title: 'widgets/PageError',
     component: PageError,
     // Parameters: {
     //     layout: 'centered',

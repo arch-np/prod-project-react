@@ -1,19 +1,34 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import ArticleRating from './ArticleRating';
+import { Meta, StoryObj } from '@storybook/react';
+import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
-export default {
+const meta = {
     title: 'features/ArticleRating',
     component: ArticleRating,
-    argTypes: {
-        backgroundColor: { control: 'color' },
+    tags: ['autodocs'],
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/article-ratings?userId=1&articleId=1`,
+                method: 'GET',
+                status: 200,
+                response: [
+                    { rate: 4 },
+                ],
+            },
+        ],
     },
-} as ComponentMeta<typeof ArticleRating>;
+} satisfies Meta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof ArticleRating> = args => <ArticleRating {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Normal = Template.bind({});
-Normal.args = {
-
+export const Normal: Story = {
+    args: {
+        id: '1',
+    },
+    decorators: [storeDecorator({
+        user: { authData: { id: '1' } },
+    })],
 };
+

@@ -3,11 +3,10 @@ import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from '@/app/providers/ThemeProvider';
 import { NavBar } from './NavBar';
 import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-// import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'widget/NavBar',
+    title: 'widgets/NavBar',
     component: NavBar,
     // Parameters: {
     //     layout: 'centered',

@@ -3,7 +3,7 @@ import { NotificationItem } from './NotificationItem';
 import { Notification } from '../../model/types/notification';
 
 const meta = {
-    title: 'shared/NotificationItem',
+    title: 'entities/Notification/NotificationItem',
     component: NotificationItem,
     tags: ['autodocs'],
 } satisfies Meta<typeof NotificationItem>;
