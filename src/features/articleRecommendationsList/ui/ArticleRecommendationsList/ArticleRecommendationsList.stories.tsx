@@ -1,7 +1,7 @@
-import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Meta, StoryObj } from '@storybook/react';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-import { Article } from 'entities/Article';
+import { Article } from '@/entities/Article';
 
 const article: Article = {
     id: '1',

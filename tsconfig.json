@@ -13,9 +13,10 @@
         "allowJs": true,
         "strict": true,
         "moduleResolution": "node",
+        // Абсолютный импорт
         "baseUrl": ".",
         "paths": {
-            "*": ["src/*"]
+            "@/*": ["./src/*"]
         },
         // Включает интероп с ES6
         //

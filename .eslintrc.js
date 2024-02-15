@@ -92,7 +92,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'react/display-name': 'off',
         'no-undef': 'off',
-        'pp-checker/path-checker': 'error',
+        'pp-checker/path-checker': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

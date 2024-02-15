@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { PageError } from './PageError';
 // import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'widget/PageError',
+    title: 'widgets/PageError',
     component: PageError,
     // Parameters: {
     //     layout: 'centered',

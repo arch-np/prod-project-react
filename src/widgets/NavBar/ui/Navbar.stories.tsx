@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
 import { NavBar } from './NavBar';
-import { storeDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-// import 'app/styles/index.scss';
+import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-    title: 'widget/NavBar',
+    title: 'widgets/NavBar',
     component: NavBar,
     // Parameters: {
     //     layout: 'centered',

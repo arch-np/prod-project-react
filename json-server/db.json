@@ -1,13 +1,35 @@
 {
-  "posts": [
+  "notifications": [
     {
       "id": "1",
-      "title": "json-server",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
       "userId": "1"
     },
     {
       "id": "2",
-      "title": "json-server",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление  5",
+      "description": "Произошло какое-то событие",
       "userId": "2"
     }
   ],
@@ -1205,6 +1227,12 @@
       "userId": "1",
       "text": "test23",
       "id": "RHpYGA-"
+    },
+    {
+      "articleId": "21",
+      "userId": "1",
+      "text": "gdsfgdf",
+      "id": "N7uLkrq"
     }
   ],
   "users": [
@@ -1241,8 +1269,8 @@
       "id": "1",
       "first": "Archy2",
       "lastname": "Fut",
-      "age": 33,
-      "currency": "EUR",
+      "age": 36,
+      "currency": "USD",
       "country": "Russia",
       "city": "Moscow",
       "username": "admin",
@@ -1258,6 +1286,59 @@
       "city": "Moscow",
       "username": "Vasa",
       "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedBack": "",
+      "id": "fij4Zwm"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 4,
+      "feedBack": "ergerger",
+      "id": "_BqAZ_L"
+    },
+    {
+      "userId": "1",
+      "articleId": "21",
+      "rate": 4,
+      "feedBack": "",
+      "id": "Y3dIf9A"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хороший профиль",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "userId": "1",
+      "profileId": "1",
+      "rate": 4,
+      "feedBack": "",
+      "id": "XIMwpA3"
     }
   ]
 }
