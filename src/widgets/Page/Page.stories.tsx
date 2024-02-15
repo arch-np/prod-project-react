@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from './Page';
 
 const meta = {
     title: 'widgets/Page',
