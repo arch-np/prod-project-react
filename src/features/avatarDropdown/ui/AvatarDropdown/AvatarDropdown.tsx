@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback } from 'react';
 import { Dropdown } from '@/shared/ui/Popups';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { RoutesPath } from '@/shared/const/router';
