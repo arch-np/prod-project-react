@@ -93,7 +93,11 @@ module.exports = {
         'react/display-name': 'off',
         'no-undef': 'off',
         'pp-checker/path-checker': ['error', { alias: '@' }],
-        'pp-checker/public-api-imports': ['error', { alias: '@' }],
+        'pp-checker/public-api-imports': ['error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            }],
     },
     globals: {
         __IS_DEV__: true,
