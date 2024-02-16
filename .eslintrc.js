@@ -93,6 +93,7 @@ module.exports = {
         'react/display-name': 'off',
         'no-undef': 'off',
         'pp-checker/path-checker': ['error', { alias: '@' }],
+        'pp-checker/public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

@@ -9,3 +9,4 @@ export { getArticleDetailsData } from './model/selectors/articleDetails';
 export { ArticleView } from './model/consts/articleConsts';
 export { ArticleType } from './model/consts/articleConsts';
 export { ArticleSortField } from './model/consts/articleConsts';
+export { ArticleBlockType } from './model/consts/articleConsts';

@@ -4,13 +4,13 @@ import React, { memo } from 'react';
 import { ArticleDetails } from '@/entities/Article';
 import { useParams } from 'react-router-dom';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from '@/widgets/Page/Page';
 import { articleDetailsPageReducer } from '../../model/slices/index';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleRating } from '@/features/articleRating';
+import { Page } from '@/widgets/Page';
 
 interface ArticleDetailsPageProps {
     className?: string;
