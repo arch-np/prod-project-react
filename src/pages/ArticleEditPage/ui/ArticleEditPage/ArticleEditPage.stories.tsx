@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-// eslint-disable-next-line pp-checker/path-checker
-import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { ArticleEditPage } from '../../index';
 import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta = {

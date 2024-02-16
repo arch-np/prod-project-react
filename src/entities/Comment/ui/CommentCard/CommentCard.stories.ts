@@ -3,7 +3,8 @@ import { Comment } from '../../model/types/comment';
 import { CommentCard } from './CommentCard';
 import { User } from '@/entities/User';
 import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+
+import { Theme } from '@/shared/const/theme';
 
 const meta = {
     title: 'entities/Comment/CommentCard',

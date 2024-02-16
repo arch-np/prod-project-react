@@ -3,7 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Comment, CommentList } from '@/entities/Comment';
 import { User } from '@/entities/User';
 import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+
+import { Theme } from '@/shared/const/theme';
 
 const meta = {
     title: 'entities/Comment/CommentList',

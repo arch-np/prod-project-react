@@ -25,7 +25,7 @@ import {
 } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from '@/shared/ui/Stack';
 import { ValidateProfileError } from '../../model/consts/consts';
-import { ProfileRating } from '@/features/profileRating';
+import { ProfileRating } from '../../../profileRating';
 
 interface EditableProfileCardProps {
     className?: string;

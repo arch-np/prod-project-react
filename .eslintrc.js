@@ -98,6 +98,11 @@ module.exports = {
                 alias: '@',
                 testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             }],
+        'pp-checker/layer-imports-checker': ['error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            }],
     },
     globals: {
         __IS_DEV__: true,
