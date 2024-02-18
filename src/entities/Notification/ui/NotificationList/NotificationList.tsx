@@ -1,5 +1,4 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './NotificationList.module.scss';
 import { memo } from 'react';
 import { useNotifications } from '../../api/notificationApi';
 import { VStack } from '@/shared/ui/Stack';

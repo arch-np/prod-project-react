@@ -33,9 +33,10 @@ directories?.forEach(directory => {
 
         filesInFolder?.forEach(component => {
             const folderLen = folderName.length;
-            const moduleName = component.getBaseNameWithoutExtension();
+            // const moduleName = component.getBaseNameWithoutExtension();
             const modulePath = `.${component.getFilePath().slice(folderLen, -4)}`;
-            content += `export {${moduleName}} from "${modulePath}"\n`;
+            // content += `export {${moduleName}} from "${modulePath}"\n`;
+            content += `export * from "${modulePath}"\n`;
         });
         // console.log(content)
         const file = directory.createSourceFile(
