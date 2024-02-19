@@ -1,5 +1,7 @@
-import ArticleRating from './ArticleRating';
 import { Meta, StoryObj } from '@storybook/react';
+
+import ArticleRating from './ArticleRating';
+
 import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta = {

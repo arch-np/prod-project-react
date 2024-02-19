@@ -1,7 +1,10 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Tabs.module.scss';
 import { memo, ReactNode, useCallback } from 'react';
+
 import { Card, CardTheme } from '../Card/Card';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './Tabs.module.scss';
 
 export interface TabItem<T extends string>{
     value: T;

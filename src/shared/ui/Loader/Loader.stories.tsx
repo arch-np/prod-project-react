@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Loader } from './Loader';
-import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
+import { Loader } from './Loader';
+
+import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 // import 'app/styles/index.scss';
 

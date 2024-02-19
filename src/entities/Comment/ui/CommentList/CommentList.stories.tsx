@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 // eslint-disable-next-line pp-checker/path-checker
 import { Comment, CommentList } from '@/entities/Comment';
 import { User } from '@/entities/User';
 import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-
 import { Theme } from '@/shared/const/theme';
 
 const meta = {

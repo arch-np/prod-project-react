@@ -1,11 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ProfilePage } from '../index';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatarImg from '@/shared/assets/tests/storybook.jpg';
-import { ProfilePage } from '../index';
+import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 // import 'app/styles/index.scss';
 

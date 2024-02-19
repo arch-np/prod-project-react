@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 // eslint-disable-next-line storybook/story-exports

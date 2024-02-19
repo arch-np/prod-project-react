@@ -2,12 +2,14 @@ import {
     createEntityAdapter,
     createSlice, PayloadAction,
 } from '@reduxjs/toolkit';
-import { Comment } from '@/entities/Comment';
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+
 import {
     fetchCommentsByArticleId,
 } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Comment } from '@/entities/Comment';
 
 // Используется нормализация данных
 // https://redux-toolkit.js.org/api/createEntityAdapter

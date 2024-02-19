@@ -1,7 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+
 import MainPage from './MainPage';
+
 import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 // import 'app/styles/index.scss';
 
