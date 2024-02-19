@@ -92,6 +92,7 @@
     "sass-loader": "^14.1.0",
     "storybook": "^7.6.15",
     "storybook-addon-mock": "^4.3.0",
+    "storybook-addon-themes": "^6.1.0",
     "style-loader": "^3.3.4",
     "stylelint": "^16.2.1",
     "stylelint-config-standard-scss": "^13.0.0",

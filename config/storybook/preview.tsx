@@ -4,7 +4,6 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { storeDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
-import { themeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
@@ -17,10 +16,18 @@ const preview: Preview = {
             },
         },
         layout: 'fullscreen',
+        themes: {
+            default: 'light',
+            list: [
+                { name: 'light', class: ['app', Theme.LIGHT], color: '#dfe3e5' },
+                { name: 'dark', class: ['app', Theme.DARK], color: '#021b52' },
+                { name: 'green', class: ['app', Theme.GREEN], color: '#33da0e' },
+            ],
+        },
     },
     decorators: [
         StyleDecorator,
-        themeDecorator(Theme.LIGHT),
+        // themeDecorator(Theme.LIGHT),
         RouterDecorator,
         SuspenseDecorator,
         storeDecorator({}),
