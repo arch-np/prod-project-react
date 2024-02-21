@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ArticleType } from '../../model/consts/articleConsts';
-
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
+import { ArticleType } from '@/entities/Article';
+
 const meta = {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'features/Article/ArticleTypeTabs',
     component: ArticleTypeTabs,
     tags: ['autodocs'],
 } satisfies Meta<typeof ArticleTypeTabs>;
