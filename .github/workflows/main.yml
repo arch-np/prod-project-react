@@ -1,45 +1,7 @@
-#name: linting, testing, building
-#on:
-#  push:
-#    branches: [ dev,main,ci ]
-#  pull_request:
-#    branches: [ dev,main,ci ]
-#jobs:
-#  pipeline:
-#    runs-on: ubuntu-latest
-#    strategy:
-#      matrix:
-#        node-version: [ 17.x ]
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Staring Node.js ${{ matrix.node-version }}
-#        uses: actions/setup-node@v1
-#        with:
-#          node-version: ${{ matrix.node-version }}
-#      - name: install modules
-#        run: npm ci
-#      - name: build production project
-#        run: npm run build:prod
-#        if: always()
-#      - name: linting typescript
-#        run: npm run lint:ts
-#        if: always()
-#      - name: linting css
-#        run: npm run lint:scss
-#      - name: unit testing
-#        if: always()
-#        run: npm run test:unit
-#      - name: build storybook
-#        run: npm run storybook:build
-#        if: always()
-#      - name: screenshot testing
-#        run: npm run test:ui:ci
-
 name: linting, testing, building
 on:
   push:
-    branches: [ main, tests ]
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 permissions:
@@ -50,7 +12,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 jobs:
-  build-and-ui-testing:
+  build-and-testing:
     runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
     environment:
@@ -98,7 +60,7 @@ jobs:
         if: always()
         uses: actions/deploy-pages@v1
 
-  checks:
+  checks-linting:
     runs-on: ubuntu-latest
     strategy:
       matrix:
