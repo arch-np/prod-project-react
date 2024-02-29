@@ -1,6 +1,7 @@
 import { addCommentForArticle } from './addCommentForArticle';
-import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+
 import { Comment } from '@/entities/Comment';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
 const comment:Comment = {
     id: '1',

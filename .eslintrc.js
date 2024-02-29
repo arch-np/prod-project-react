@@ -14,29 +14,8 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
+        // 'plugin:import/recommended',
     ],
-    // Overrides: [
-    // 	{
-    // 		env: {
-    // 			node: true,
-    // 		},
-    // 		files: [
-    // 			'.eslintrc.{js,cjs}',
-    // 		],
-    // 		parserOptions: {
-    // 			sourceType: 'script',
-    // 		},
-    // 	},
-    // 	{
-    // 		extends: [
-    // 			'xo-typescript',
-    // 		],
-    // 		files: [
-    // 			'*.ts',
-    // 			'*.tsx',
-    // 		],
-    // 	},
-    // ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -51,6 +30,8 @@ module.exports = {
         'i18next',
         'react-hooks',
         'pp-checker',
+        'unused-imports',
+        'import',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -93,6 +74,39 @@ module.exports = {
         'react/display-name': 'off',
         'no-undef': 'off',
         'pp-checker/path-checker': ['error', { alias: '@' }],
+        'pp-checker/public-api-imports': ['error',
+            {
+                alias: '@',
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+            }],
+        'pp-checker/layer-imports-checker': ['error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            }],
+        'unused-imports/no-unused-imports': 'error',
+        'import/order': [
+            'error',
+            {
+                pathGroups: [
+                    {
+                        pattern: '@/**',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                    {
+                        pattern: './**.module.*',
+                        group: 'internal',
+                        position: 'after',
+                    },
+                ],
+                'newlines-between': 'always',
+                alphabetize: {
+                    order: 'asc',
+                    caseInsensitive: false,
+                },
+            },
+        ],
     },
     globals: {
         __IS_DEV__: true,

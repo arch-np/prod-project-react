@@ -1,9 +1,11 @@
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-import { Sidebar } from './Sidebar';
 import { Meta, StoryObj } from '@storybook/react';
+
+import { Sidebar } from './Sidebar';
+
 import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
 
 const meta = {
     title: 'widgets/Sidebar',

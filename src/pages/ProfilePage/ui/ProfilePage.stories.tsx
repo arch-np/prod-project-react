@@ -1,12 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
-// eslint-disable-next-line pp-checker/path-checker
-import ProfilePage from '@/pages/ProfilePage/ui/ProfilePage';
-import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { ProfilePage } from '../index';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatarImg from '@/shared/assets/tests/storybook.jpg';
+import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { themeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
 // import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export

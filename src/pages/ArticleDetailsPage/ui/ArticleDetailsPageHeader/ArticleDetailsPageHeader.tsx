@@ -1,12 +1,14 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { RoutesPath } from '@/shared/config/routeConfig/routeConfig';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 import { getCanEditArticle } from '../../model/selectors/article';
+
 import { getArticleDetailsData } from '@/entities/Article';
+import { getRouteArticleDetails, getRouteArticles } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
@@ -23,12 +25,14 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     const article = useSelector(getArticleDetailsData);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutesPath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutesPath.articles_details}${article?.id}/edit`);
-    }, [article?.id, navigate]);
+        if (article) {
+            navigate(getRouteArticleDetails(article?.id));
+        }
+    }, [article, navigate]);
 
     return (
         <HStack max justify={'between'} className={classNames('', {}, [className])}>

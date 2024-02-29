@@ -1,9 +1,11 @@
 import { DeepPartial } from '@reduxjs/toolkit';
-import { StateSchema } from '@/app/providers/StoreProvider';
+
 import {
     getAddCommentFormError,
     getAddCommentFormText,
 } from './addCommentFromSelectors';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('addCommentFromSelectors.test', () => {
     test('should return error', () => {

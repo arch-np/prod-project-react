@@ -1,7 +1,11 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './Tabs.module.scss';
-import { memo, ReactNode, useCallback } from 'react';
+import { ReactNode, useCallback } from 'react';
+
 import { Card, CardTheme } from '../Card/Card';
+
+import { typedMemo } from '@/shared/const/typedMemo';
+import { classNames } from '@/shared/lib/classNames/classNames';
+
+import cls from './Tabs.module.scss';
 
 export interface TabItem<T extends string>{
     value: T;
@@ -13,9 +17,6 @@ interface TabsProps<T extends string> {
     value: T;
     onTabChange: (tab: T) => void;
 }
-
-const typedMemo: <T>(c: T) => T = memo;
-
 export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
     const {
         className,

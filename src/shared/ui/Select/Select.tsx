@@ -1,6 +1,9 @@
+import { ChangeEvent, useMemo } from 'react';
+
+import { typedMemo } from '@/shared/const/typedMemo';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+
 import cls from './Select.module.scss';
-import { ChangeEvent, memo, useMemo } from 'react';
 
 export interface SelectOption<T extends string>{
     value:T;
@@ -14,8 +17,6 @@ interface SelectProps<T extends string> {
     onChange?:(value:T)=>void;
     readonly? : boolean;
 }
-
-const typedMemo: <T>(c: T) => T = memo;
 
 export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     const { className,

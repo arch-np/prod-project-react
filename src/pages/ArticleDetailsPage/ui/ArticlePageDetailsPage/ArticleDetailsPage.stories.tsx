@@ -1,8 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
+
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { Article, ArticleType } from '@/entities/Article';
+
+import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { storeDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleBlockType } from '@/entities/Article/model/consts/articleConsts';
 // import 'app/styles/index.scss';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
