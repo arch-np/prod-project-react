@@ -1298,6 +1298,15 @@
         "MANAGER"
       ],
       "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
+    },
+    {
+      "id": "4",
+      "username": "testUser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://www.plugincim.com/assets/images/products/csgo-plugin-listesi/362.png"
     }
   ],
   "profile": [
