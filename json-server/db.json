@@ -1147,6 +1147,116 @@
           ]
         }
       ]
+    },
+    {
+      "title": "political coop",
+      "subtitle": "Кооперация",
+      "img": "https://paleontol.ru/wp-content/uploads/2022/05/globalizatsiya-dostupnoj-informatsii.jpg",
+      "views": 4563,
+      "createdAt": "13.12.2023",
+      "userId": "1",
+      "type": [
+        "POLITICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка."
+          ]
+        }
+      ],
+      "id": "SXy7bQW"
+    },
+    {
+      "title": "political coop",
+      "subtitle": "Кооперация",
+      "img": "https://paleontol.ru/wp-content/uploads/2022/05/globalizatsiya-dostupnoj-informatsii.jpg",
+      "views": 4563,
+      "createdAt": "13.12.2023",
+      "userId": "1",
+      "type": [
+        "POLITICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка."
+          ]
+        }
+      ],
+      "id": "GJPIrGq"
+    },
+    {
+      "title": "political coop",
+      "subtitle": "Кооперация",
+      "img": "https://paleontol.ru/wp-content/uploads/2022/05/globalizatsiya-dostupnoj-informatsii.jpg",
+      "views": 4563,
+      "createdAt": "13.12.2023",
+      "userId": "1",
+      "type": [
+        "POLITICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка."
+          ]
+        }
+      ],
+      "id": "TzkdJ4V"
+    },
+    {
+      "title": "political coop",
+      "subtitle": "Кооперация",
+      "img": "https://paleontol.ru/wp-content/uploads/2022/05/globalizatsiya-dostupnoj-informatsii.jpg",
+      "views": 4563,
+      "createdAt": "13.12.2023",
+      "userId": "1",
+      "type": [
+        "POLITICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка."
+          ]
+        }
+      ],
+      "id": "9Ml_DOl"
+    },
+    {
+      "title": "political coop",
+      "subtitle": "Кооперация",
+      "img": "https://paleontol.ru/wp-content/uploads/2022/05/globalizatsiya-dostupnoj-informatsii.jpg",
+      "views": 4563,
+      "createdAt": "13.12.2023",
+      "userId": "1",
+      "type": [
+        "POLITICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка."
+          ]
+        }
+      ],
+      "id": "EAhXa3Y"
     }
   ],
   "comments": [
@@ -1330,6 +1440,17 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "Vasa",
+      "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 27,
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
     }
   ],
