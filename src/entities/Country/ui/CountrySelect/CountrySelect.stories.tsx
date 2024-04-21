@@ -5,9 +5,7 @@ import { CountrySelect } from './CountrySelect';
 const meta = {
     title: 'entities/CountrySelect',
     component: CountrySelect,
-    args: {
-
-    },
+    args: {},
     tags: ['autodocs'],
 } satisfies Meta<typeof CountrySelect>;
 

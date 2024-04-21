@@ -15,11 +15,11 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 
 import cls from './Navbar.module.scss';
 
-interface NavbarProps{
+interface NavbarProps {
     className?: string;
 }
 
-export const NavBar = memo(({ className }:NavbarProps) => {
+export const NavBar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const authData = useSelector(getUserAuthData);
@@ -47,10 +47,11 @@ export const NavBar = memo(({ className }:NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <HStack gap={'16'} className={cls.actions}>
-                    <NotificationButton/>
-                    <AvatarDropdown/>
+                    <NotificationButton />
+                    <AvatarDropdown />
                 </HStack>
-            </header>);
+            </header>
+        );
     }
 
     return (
@@ -62,11 +63,9 @@ export const NavBar = memo(({ className }:NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            {isAuthModal && <LoginModal
-                isOpen={isAuthModal}
-                onClose={onCloseModal}
-            />}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     );
 });
-

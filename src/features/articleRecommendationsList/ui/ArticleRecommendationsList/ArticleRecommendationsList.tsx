@@ -13,33 +13,37 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-    const { className } = props;
-    const { t } = useTranslation('article');
-    const { data: articles, isLoading, error } = useArticleRecommendationsList(5);
+export const ArticleRecommendationsList = memo(
+    (props: ArticleRecommendationsListProps) => {
+        const { className } = props;
+        const { t } = useTranslation('article');
+        const {
+            data: articles,
+            isLoading,
+            error,
+        } = useArticleRecommendationsList(5);
 
-    if (error || !articles) {
-        return <Text text={t('Не удалось загрузить рекомендации')}/>;
-    }
+        if (error || !articles) {
+            return <Text text={t('Не удалось загрузить рекомендации')} />;
+        }
 
-    if (isLoading) {
-        return <Skeleton height={'300px'} width={'100%'}/>;
-    }
+        if (isLoading) {
+            return <Skeleton height={'300px'} width={'100%'} />;
+        }
 
-    return (
-        <VStack
-            gap={'8'}
-            data-testid={'ArticleRecommendationsList'}
-            className={classNames('', {}, [className])}>
-            <Text
-                size={TextSize.L}
-                title={t('Рекомендуем')}
-            />
-            <ArticleList
-                articles={articles}
-                isLoading={isLoading}
-                target={'_blank'}
-            />
-        </VStack>
-    );
-});
+        return (
+            <VStack
+                gap={'8'}
+                data-testid={'ArticleRecommendationsList'}
+                className={classNames('', {}, [className])}
+            >
+                <Text size={TextSize.L} title={t('Рекомендуем')} />
+                <ArticleList
+                    articles={articles}
+                    isLoading={isLoading}
+                    target={'_blank'}
+                />
+            </VStack>
+        );
+    },
+);

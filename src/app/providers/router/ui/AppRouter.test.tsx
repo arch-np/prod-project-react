@@ -3,11 +3,15 @@ import { screen } from '@testing-library/react';
 import AppRouter from './AppRouter';
 
 import { UserRole } from '@/entities/User';
-import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import {
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteProfile,
+} from '@/shared/const/router';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 describe('app/router/AppRouter', () => {
     test('Страница отрендеривается', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: getRouteAbout(),
         });
 
@@ -16,7 +20,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Страница не найдена', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: '/sgdsggsd',
         });
 
@@ -25,7 +29,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Редирект неавторизованного пользователя', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
         });
 
@@ -34,7 +38,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Доступ к закрытой странице для авторизованного пользователя', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
             initialState: {
                 user: {
@@ -49,7 +53,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Доступ запрещен, нет роли', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
                 user: {
@@ -64,7 +68,7 @@ describe('app/router/AppRouter', () => {
     });
 
     test('Доступ разрешен', async () => {
-        componentRender(<AppRouter/>, {
+        componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {
                 user: {

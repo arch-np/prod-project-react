@@ -52,21 +52,18 @@ const article: Article = {
         },
     ],
 } as Article;
-const articles
-    = new Array(8)
-        .fill(0)
-        .map((_, index) => ({
-            ...article,
-            id: String(index),
-        }));
-export const TileLoading:Story = {
+const articles = new Array(8).fill(0).map((_, index) => ({
+    ...article,
+    id: String(index),
+}));
+export const TileLoading: Story = {
     args: {
         articles: [],
         isLoading: true,
         view: ArticleView.TILE,
     },
 };
-export const ListLoading:Story = {
+export const ListLoading: Story = {
     args: {
         articles: [],
         isLoading: true,

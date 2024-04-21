@@ -13,7 +13,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const item:Notification = {
+const item: Notification = {
     id: '1',
     title: 'Уведомление 1',
     description: 'Произошло какое-то событие',

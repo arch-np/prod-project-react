@@ -4,9 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {
-    fetchCommentsByArticleId,
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsNormalizeSlice';
 
 import { CommentList } from '@/entities/Comment';
@@ -22,46 +20,50 @@ import cls from './ArticleDetailsComments.module.scss';
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id?: string
+    id?: string;
 }
 
-export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-    const {
-        className,
-        id,
-    } = props;
-    const { t } = useTranslation('article');
-    const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useAppDispatch();
+export const ArticleDetailsComments = memo(
+    (props: ArticleDetailsCommentsProps) => {
+        const { className, id } = props;
+        const { t } = useTranslation('article');
+        const comments = useSelector(getArticleComments.selectAll);
+        const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+        const dispatch = useAppDispatch();
 
-    const onSendComment = useCallback((text:string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+        const onSendComment = useCallback(
+            (text: string) => {
+                dispatch(addCommentForArticle(text));
+            },
+            [dispatch],
+        );
 
-    useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
-    });
+        useInitialEffect(() => {
+            dispatch(fetchCommentsByArticleId(id));
+        });
 
-    return (
-        <VStack
-            gap={'16'}
-            max
-            className={classNames('', {}, [className])}
-        >
-            <Text
-                size={TextSize.L}
-                className={cls.commentTitle}
-                title={t('Комментарии')}
-            />
-            <Suspense fallback={<div><Skeleton width={'100%'} height={'300px'}/></div>}>
-                <AddCommentForm onSendComment={onSendComment}/>
-            </Suspense>
+        return (
+            <VStack gap={'16'} max className={classNames('', {}, [className])}>
+                <Text
+                    size={TextSize.L}
+                    className={cls.commentTitle}
+                    title={t('Комментарии')}
+                />
+                <Suspense
+                    fallback={
+                        <div>
+                            <Skeleton width={'100%'} height={'300px'} />
+                        </div>
+                    }
+                >
+                    <AddCommentForm onSendComment={onSendComment} />
+                </Suspense>
 
-            <CommentList
-                isLoading={commentsIsLoading}
-                comments={comments}
-            />
-        </VStack>
-    );
-});
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </VStack>
+        );
+    },
+);

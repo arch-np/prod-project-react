@@ -16,9 +16,9 @@ interface RatingCardProps {
     title?: string;
     feedbackTitle?: string;
     hasFeedback?: boolean;
-    onCancel?: (starsCount:number) => void;
-    onAccept?: (starsCount:number, feedback?: string) => void;
-    rate?:number;
+    onCancel?: (starsCount: number) => void;
+    onAccept?: (starsCount: number, feedback?: string) => void;
+    rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
@@ -37,14 +37,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
     const [starsCount, setStarsCount] = useState<number>(rate);
     const [feedback, setFeedback] = useState<string>('');
 
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else {
-            onAccept?.(selectedStarsCount);
-        }
-    }, [hasFeedback, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else {
+                onAccept?.(selectedStarsCount);
+            }
+        },
+        [hasFeedback, onAccept],
+    );
 
     const acceptHandle = useCallback(() => {
         setIsModalOpen(false);
@@ -58,9 +61,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
 
     const modalContent = (
         <>
-            <Text
-                title={feedbackTitle}
-            />
+            <Text title={feedbackTitle} />
             <Input
                 data-testid={'RatingCard.Input'}
                 value={feedback}
@@ -74,22 +75,28 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <Card className={className} max data-testid={'RatingCard'}>
             <VStack align={'center'} gap={'8'} max>
                 <Text title={starsCount ? t('Спасибо за оценку') : title} />
-                <StarRating selectStars={starsCount} size={40} onSelect={onSelectStars}/>
+                <StarRating
+                    selectStars={starsCount}
+                    size={40}
+                    onSelect={onSelectStars}
+                />
             </VStack>
             <BrowserView>
                 <Modal isOpen={isModalOpen} lazy>
-                    <VStack max gap='32'>
+                    <VStack max gap="32">
                         {modalContent}
-                        <HStack max gap='16' justify='end'>
+                        <HStack max gap="16" justify="end">
                             <Button
                                 data-testid={'RatingCard.Close'}
                                 onClick={cancelHandle}
-                                theme={ButtonTheme.OUTLINE_RED}>
+                                theme={ButtonTheme.OUTLINE_RED}
+                            >
                                 {t('Закрыть')}
                             </Button>
                             <Button
                                 data-testid={'RatingCard.Send'}
-                                onClick={acceptHandle}>
+                                onClick={acceptHandle}
+                            >
                                 {t('Отправить')}
                             </Button>
                         </HStack>
@@ -98,9 +105,13 @@ export const RatingCard = memo((props: RatingCardProps) => {
             </BrowserView>
             <MobileView>
                 <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-                    <VStack gap='32'>
+                    <VStack gap="32">
                         {modalContent}
-                        <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
+                        <Button
+                            fullWidth
+                            onClick={acceptHandle}
+                            size={ButtonSize.L}
+                        >
                             {t('Отправить')}
                         </Button>
                     </VStack>

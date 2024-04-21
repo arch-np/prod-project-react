@@ -1,8 +1,8 @@
-let profileId:string;
+let profileId: string;
 describe('Пользователь на странице профиля ', () => {
     beforeEach(() => {
         cy.visit('');
-        cy.login().then(data => {
+        cy.login().then((data) => {
             profileId = data.id;
             cy.visit('profile/' + data.id);
         });
@@ -11,13 +11,19 @@ describe('Пользователь на странице профиля ', () =>
         cy.resetProfile(profileId);
     });
     it('И профиль успешно загружается', () => {
-        cy.getByTestId('ProfileCard.InputFirstName').should('have.value', 'test');
+        cy.getByTestId('ProfileCard.InputFirstName').should(
+            'have.value',
+            'test',
+        );
     });
     it('И профиль редактируется', () => {
         const name = 'newname';
         const lastName = 'lastname';
         cy.updateProfile(name, lastName);
         cy.getByTestId('ProfileCard.InputFirstName').should('have.value', name);
-        cy.getByTestId('ProfileCard.InputLastName').should('have.value', lastName);
+        cy.getByTestId('ProfileCard.InputLastName').should(
+            'have.value',
+            lastName,
+        );
     });
 });

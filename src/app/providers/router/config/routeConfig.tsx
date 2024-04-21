@@ -10,14 +10,19 @@ import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import {
     AppRoutes,
-    getRouteAbout, getRouteAdmin, getRouteArticleCreate,
-    getRouteArticleDetails, getRouteArticleEdit, getRouteArticles, getRouteForbidden,
+    getRouteAbout,
+    getRouteAdmin,
+    getRouteArticleCreate,
+    getRouteArticleDetails,
+    getRouteArticleEdit,
+    getRouteArticles,
+    getRouteForbidden,
     getRouteMain,
     getRouteProfile,
 } from '@/shared/const/router';
 import { AppRoutesProps } from '@/shared/types/router';
 
-export const routeConfig:Record<AppRoutes, AppRoutesProps> = {
+export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
         path: getRouteMain(),
         element: <MainPage />,
@@ -33,37 +38,36 @@ export const routeConfig:Record<AppRoutes, AppRoutesProps> = {
     },
     [AppRoutes.ARTICLES]: {
         path: getRouteArticles(),
-        element: <ArticlesPage/>,
+        element: <ArticlesPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLES_DETAILS]: {
         path: getRouteArticleDetails(':id'),
-        element: <ArticleDetailsPage/>,
+        element: <ArticleDetailsPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_CREATE]: {
         path: getRouteArticleCreate(),
-        element: <ArticleEditPage/>,
+        element: <ArticleEditPage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_EDIT]: {
         path: getRouteArticleEdit(':id'),
-        element: <ArticleEditPage/>,
+        element: <ArticleEditPage />,
         authOnly: true,
     },
     [AppRoutes.ADMIN_PANEL]: {
         path: getRouteAdmin(),
-        element: <AdminPanelPage/>,
+        element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER],
     },
     [AppRoutes.FORBIDDEN]: {
         path: getRouteForbidden(),
-        element: <ForbiddenPage/>,
+        element: <ForbiddenPage />,
     },
     [AppRoutes.NOT_FOUND]: {
         path: '*',
         element: <NotFoundPage />,
     },
-
 };

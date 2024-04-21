@@ -32,15 +32,14 @@ export const Primary: Story = {
             avatar: avatarImg,
         },
     },
-
 };
-export const withError:Story = {
+export const withError: Story = {
     args: {
         error: 'Error',
     },
 };
 
-export const Loading:Story = {
+export const Loading: Story = {
     args: {
         isLoading: true,
     },

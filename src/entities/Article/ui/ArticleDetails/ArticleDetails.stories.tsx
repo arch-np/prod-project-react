@@ -16,7 +16,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const article:Article = {
+const article: Article = {
     id: '1',
     title: 'Js news',
     subtitle: 'Что нового в JS на текущий момент?',
@@ -62,7 +62,7 @@ const article:Article = {
         {
             id: '7',
             type: ArticleBlockType.CODE,
-            code: 'const path = require(\'path\');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \'db.json\'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);',
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '8',
@@ -95,29 +95,35 @@ export const Normal: Story = {
     args: {
         id: '1',
     },
-    decorators: [storeDecorator({
-        articleDetails: {
-            data: article,
-        },
-    })],
+    decorators: [
+        storeDecorator({
+            articleDetails: {
+                data: article,
+            },
+        }),
+    ],
 };
 export const Loading: Story = {
     args: {
         id: '1',
     },
-    decorators: [storeDecorator({
-        articleDetails: {
-            isLoading: true,
-        },
-    })],
+    decorators: [
+        storeDecorator({
+            articleDetails: {
+                isLoading: true,
+            },
+        }),
+    ],
 };
 export const Error: Story = {
     args: {
         id: '1',
     },
-    decorators: [storeDecorator({
-        articleDetails: {
-            error: 'error',
-        },
-    })],
+    decorators: [
+        storeDecorator({
+            articleDetails: {
+                error: 'error',
+            },
+        }),
+    ],
 };

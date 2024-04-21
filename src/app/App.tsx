@@ -19,9 +19,9 @@ const App = () => {
 
     return (
         <div className={classNames('app', {}, [])}>
-            <Suspense fallback=''>
-                <NavBar/>
-                <div className='content-page'>
+            <Suspense fallback="">
+                <NavBar />
+                <div className="content-page">
                     <Sidebar />
                     {inited && <AppRouter />}
                 </div>

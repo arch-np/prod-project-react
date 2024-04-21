@@ -21,7 +21,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const article:Article = {
+const article: Article = {
     id: '1',
     title: 'Js news',
     subtitle: 'Что нового в JS на текущий момент?',
@@ -67,7 +67,7 @@ const article:Article = {
         {
             id: '7',
             type: ArticleBlockType.CODE,
-            code: 'const path = require(\'path\');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \'db.json\'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);',
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '8',
@@ -96,11 +96,12 @@ const article:Article = {
 };
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Normal: Story = {
-    args: {
-    },
-    decorators: [storeDecorator({
-        articleDetails: {
-            data: article,
-        },
-    })],
+    args: {},
+    decorators: [
+        storeDecorator({
+            articleDetails: {
+                data: article,
+            },
+        }),
+    ],
 };

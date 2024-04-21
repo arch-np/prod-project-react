@@ -1,4 +1,7 @@
-import { getArticleCommentsError, getArticleCommentsIsLoading } from './comments';
+import {
+    getArticleCommentsError,
+    getArticleCommentsIsLoading,
+} from './comments';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 
@@ -15,7 +18,9 @@ describe('comments.test', () => {
     });
     test('should work with empty state error', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getArticleCommentsError(state as StateSchema)).toEqual(undefined);
+        expect(getArticleCommentsError(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
     test('should return isLoading', () => {
         const state: DeepPartial<StateSchema> = {
@@ -23,13 +28,16 @@ describe('comments.test', () => {
                 recommendations: {
                     isLoading: true,
                 },
-
             },
         };
-        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(undefined);
+        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
     test('should work with empty state isLoading', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(undefined);
+        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
 });

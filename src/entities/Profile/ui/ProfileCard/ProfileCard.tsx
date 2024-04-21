@@ -15,10 +15,10 @@ import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string;
-    data?: Profile
+    data?: Profile;
     error?: string;
     isLoading?: boolean;
-    readonly ?: boolean;
+    readonly?: boolean;
     onChangeFirstName?: (value?: string) => void;
     onChangeLastName?: (value?: string) => void;
     onChangeCity?: (value?: string) => void;
@@ -30,7 +30,8 @@ interface ProfileCardProps {
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-    const { className,
+    const {
+        className,
         data,
         isLoading,
         readonly,
@@ -48,18 +49,35 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <HStack justify='center' max className={classNames(cls.ProfileCard, { [cls.loading]: true }, [className])}>
-                <Loader/>
+            <HStack
+                justify="center"
+                max
+                className={classNames(
+                    cls.ProfileCard,
+                    { [cls.loading]: true },
+                    [className],
+                )}
+            >
+                <Loader />
             </HStack>
         );
     }
 
     if (error) {
         return (
-            <HStack justify='center' max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack
+                justify="center"
+                max
+                className={classNames(cls.ProfileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
-                    title={t('Произошла непредвиденная ошибка при загрузке профиля')}
+                    title={t(
+                        'Произошла непредвиденная ошибка при загрузке профиля',
+                    )}
                     text={t('Попробуйте обновить страницу')}
                     align={TextAlign.CENTER}
                 />
@@ -67,15 +85,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
         );
     }
 
-    const mods:Mods = {
+    const mods: Mods = {
         [cls.editing]: !readonly,
     };
 
     return (
-        <VStack max gap='16' className={classNames(cls.ProfileCard, mods, [className])}>
+        <VStack
+            max
+            gap="16"
+            className={classNames(cls.ProfileCard, mods, [className])}
+        >
             {data?.avatar && (
-                <HStack justify='center' max className={cls.avatarWrapper}>
-                    <Avatar src={data?.avatar} alt={''}/>
+                <HStack justify="center" max className={cls.avatarWrapper}>
+                    <Avatar src={data?.avatar} alt={''} />
                 </HStack>
             )}
             <Input

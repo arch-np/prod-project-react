@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getScrollPositionByPath, scrollRestorationActions } from '@/features/ScrollRestoration';
+import {
+    getScrollPositionByPath,
+    scrollRestorationActions,
+} from '@/features/ScrollRestoration';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
@@ -15,22 +18,18 @@ import cls from './Page.module.scss';
 
 interface PageProps extends TestProps {
     className?: string;
-    children:ReactNode;
-    onScrollEnd?:()=>void
+    children: ReactNode;
+    onScrollEnd?: () => void;
 }
 
 export const Page = (props: PageProps) => {
-    const {
-        className,
-        children,
-        onScrollEnd,
-    } = props;
+    const { className, children, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
-    const scrollPosition = useSelector(
-        (state: StateSchema) => getScrollPositionByPath(state, pathname),
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollPositionByPath(state, pathname),
     );
 
     useInfiniteScroll({
@@ -44,10 +43,12 @@ export const Page = (props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollRestorationActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            scrollRestorationActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     }, 500);
 
     return (
@@ -58,7 +59,9 @@ export const Page = (props: PageProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}
+            {onScrollEnd ?
+                <div className={cls.trigger} ref={triggerRef} />
+            :   null}
         </main>
     );
 };

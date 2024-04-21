@@ -1,4 +1,8 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+    createEntityAdapter,
+    createSlice,
+    PayloadAction,
+} from '@reduxjs/toolkit';
 
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 import { ArticlesPageSchema } from '../types/articlesPageSchema';
@@ -13,11 +17,11 @@ import { SortOrder } from '@/shared/types/sort';
 // https://redux-toolkit.js.org/api/createEntityAdapter
 
 const articlesAdapter = createEntityAdapter<Article>({
-    selectId: article => article.id,
+    selectId: (article) => article.id,
 });
 
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-    state => state.articlesPage || articlesAdapter.getInitialState(),
+    (state) => state.articlesPage || articlesAdapter.getInitialState(),
 );
 
 const articlesPageSlice = createSlice({
@@ -38,27 +42,29 @@ const articlesPageSlice = createSlice({
         type: ArticleType.ALL,
     }),
     reducers: {
-        setView(state, action:PayloadAction<ArticleView>) {
+        setView(state, action: PayloadAction<ArticleView>) {
             state.view = action.payload;
             localStorage.setItem(ARTICLE_VIEW_LOCALSTORAGE_KEY, action.payload);
         },
-        setPage(state, action:PayloadAction<number>) {
+        setPage(state, action: PayloadAction<number>) {
             state.page = action.payload;
         },
-        setOrder(state, action:PayloadAction<SortOrder>) {
+        setOrder(state, action: PayloadAction<SortOrder>) {
             state.order = action.payload;
         },
-        setSort(state, action:PayloadAction<ArticleSortField>) {
+        setSort(state, action: PayloadAction<ArticleSortField>) {
             state.sort = action.payload;
         },
-        setSearch(state, action:PayloadAction<string>) {
+        setSearch(state, action: PayloadAction<string>) {
             state.search = action.payload;
         },
-        setType(state, action:PayloadAction<ArticleType>) {
+        setType(state, action: PayloadAction<ArticleType>) {
             state.type = action.payload;
         },
         initState(state) {
-            const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const view = localStorage.getItem(
+                ARTICLE_VIEW_LOCALSTORAGE_KEY,
+            ) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.TILE ? 9 : 3;
             state._inited = true;
@@ -74,23 +80,18 @@ const articlesPageSlice = createSlice({
                     articlesAdapter.removeAll(state);
                 }
             })
-            .addCase(
-                fetchArticlesList.fulfilled,
-                (
-                    state,
-                    action,
-                ) => {
-                    state.isLoading = false;
+            .addCase(fetchArticlesList.fulfilled, (state, action) => {
+                state.isLoading = false;
 
-                    // state.hasMore = action.payload.length > state.limit;
-                    state.hasMore = action.payload.length > 0;
+                // state.hasMore = action.payload.length > state.limit;
+                state.hasMore = action.payload.length > 0;
 
-                    if (action.meta.arg.replace) {
-                        articlesAdapter.setAll(state, action.payload);
-                    } else {
-                        articlesAdapter.addMany(state, action.payload);
-                    }
-                })
+                if (action.meta.arg.replace) {
+                    articlesAdapter.setAll(state, action.payload);
+                } else {
+                    articlesAdapter.addMany(state, action.payload);
+                }
+            })
             .addCase(fetchArticlesList.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
@@ -98,8 +99,5 @@ const articlesPageSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articlesPageReducer,
-    actions: articlesPageActions,
-} = articlesPageSlice;
-
+export const { reducer: articlesPageReducer, actions: articlesPageActions } =
+    articlesPageSlice;

@@ -8,9 +8,7 @@ import { Theme } from '@/shared/const/theme';
 const meta = {
     title: 'shared/Select',
     component: Select,
-    args: {
-
-    },
+    args: {},
     tags: ['autodocs'],
 } satisfies Meta<typeof Select>;
 

@@ -1,6 +1,4 @@
-import {
-    fetchCommentsByArticleId,
-} from './fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';
 
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 describe('fetchCommentsByArticleId.test', () => {

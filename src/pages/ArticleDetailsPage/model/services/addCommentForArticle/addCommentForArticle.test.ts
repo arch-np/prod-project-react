@@ -3,7 +3,7 @@ import { addCommentForArticle } from './addCommentForArticle';
 import { Comment } from '@/entities/Comment';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-const comment:Comment = {
+const comment: Comment = {
     id: '1',
     text: 'test comment',
     user: {

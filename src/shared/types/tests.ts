@@ -1,3 +1,3 @@
-export interface TestProps{
+export interface TestProps {
     'data-testid'?: string;
 }

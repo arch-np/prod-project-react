@@ -16,4 +16,3 @@ export const Normal: Story = {
         children: <div></div>,
     },
 };
-
