@@ -25,4 +25,3 @@ export const {
     reducer: counterReducer,
     useActions: useCounterActions,
 } = counterSlice;
-

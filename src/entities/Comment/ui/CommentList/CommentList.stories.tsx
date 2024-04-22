@@ -14,24 +14,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const user:User = {
+const user: User = {
     id: '1',
     username: 'admin',
 };
 
-const comment:Comment[]
-    = [
-        {
-            id: '1',
-            text: 'some comment',
-            user,
-        },
-        {
-            id: '2',
-            text: 'some comment2',
-            user,
-        },
-    ];
+const comment: Comment[] = [
+    {
+        id: '1',
+        text: 'some comment',
+        user,
+    },
+    {
+        id: '2',
+        text: 'some comment2',
+        user,
+    },
+];
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Normal: Story = {

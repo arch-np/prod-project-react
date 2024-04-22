@@ -6,27 +6,27 @@ import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 
 export const initArticlesPage = createAsyncThunk<
     void,
     URLSearchParams,
     ThunkConfig<string>
->(
-    'articlesPage/initArticlesPage',
-    async (searchParams, thunkApi) => {
-        const { getState, dispatch } = thunkApi;
-        const inited = getArticlesPageInited(getState());
+>('articlesPage/initArticlesPage', async (searchParams, thunkApi) => {
+    const { getState, dispatch } = thunkApi;
+    const inited = getArticlesPageInited(getState());
 
-        if (!inited) {
-            searchParams.forEach((value, key) => {
-                switch (key) {
+    if (!inited) {
+        searchParams.forEach((value, key) => {
+            switch (key) {
                 case 'order':
                     dispatch(articlesPageActions.setOrder(value as SortOrder));
                     break;
 
                 case 'sort':
-                    dispatch(articlesPageActions.setSort(value as ArticleSortField));
+                    dispatch(
+                        articlesPageActions.setSort(value as ArticleSortField),
+                    );
                     break;
 
                 case 'search':
@@ -39,12 +39,10 @@ export const initArticlesPage = createAsyncThunk<
 
                 default:
                     return null;
-                }
-            });
+            }
+        });
 
-            dispatch(articlesPageActions.initState());
-            dispatch(fetchArticlesList({}));
-        }
-    },
-);
-
+        dispatch(articlesPageActions.initState());
+        dispatch(fetchArticlesList({}));
+    }
+});

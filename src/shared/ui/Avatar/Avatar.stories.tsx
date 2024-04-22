@@ -10,9 +10,7 @@ import { Theme } from '@/shared/const/theme';
 const meta = {
     title: 'shared/Avatar',
     component: Avatar,
-    args: {
-
-    },
+    args: {},
     tags: ['autodocs'],
 } satisfies Meta<typeof Avatar>;
 

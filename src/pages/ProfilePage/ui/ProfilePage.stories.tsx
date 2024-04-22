@@ -25,36 +25,41 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Normal: Story = {
     args: {},
-    decorators: [storeDecorator({
-        profile: {
-            form: {
-                username: 'Admin',
-                age: 30,
-                country: Country.Belarus,
-                lastname: 'Fut',
-                first: 'Smit',
-                city: 'fdg',
-                currency: Currency.EUR,
-                avatar: avatarImg,
+    decorators: [
+        storeDecorator({
+            profile: {
+                form: {
+                    username: 'Admin',
+                    age: 30,
+                    country: Country.Belarus,
+                    lastname: 'Fut',
+                    first: 'Smit',
+                    city: 'fdg',
+                    currency: Currency.EUR,
+                    avatar: avatarImg,
+                },
             },
-        },
-    })],
+        }),
+    ],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [themeDecorator(Theme.DARK), storeDecorator({
-        profile: {
-            form: {
-                username: 'Admin',
-                age: 30,
-                country: Country.Belarus,
-                lastname: 'Fut',
-                first: 'Smit',
-                city: 'fdg',
-                currency: Currency.EUR,
-                avatar: avatarImg,
+    decorators: [
+        themeDecorator(Theme.DARK),
+        storeDecorator({
+            profile: {
+                form: {
+                    username: 'Admin',
+                    age: 30,
+                    country: Country.Belarus,
+                    lastname: 'Fut',
+                    first: 'Smit',
+                    city: 'fdg',
+                    currency: Currency.EUR,
+                    avatar: avatarImg,
+                },
             },
-        },
-    })],
+        }),
+    ],
 };

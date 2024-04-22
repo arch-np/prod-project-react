@@ -14,6 +14,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
+        'prettier',
         // 'plugin:import/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -34,9 +35,6 @@ module.exports = {
         'import',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
             {
@@ -59,14 +57,20 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to'],
-        }],
-        'max-len': ['error', {
-            code: 120,
-            ignoreComments: true,
-        }],
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid', 'to'],
+            },
+        ],
+        'max-len': [
+            'error',
+            {
+                code: 120,
+                ignoreComments: true,
+            },
+        ],
         'object-curly-spacing': ['error', 'always'],
         'capitalized-comments': 'off',
         'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -74,39 +78,48 @@ module.exports = {
         'react/display-name': 'off',
         'no-undef': 'off',
         'pp-checker/path-checker': ['error', { alias: '@' }],
-        'pp-checker/public-api-imports': ['error',
+        'pp-checker/public-api-imports': [
+            'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
-            }],
-        'pp-checker/layer-imports-checker': ['error',
+                testFilesPatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
+        ],
+        'pp-checker/layer-imports-checker': [
+            'error',
             {
                 alias: '@',
                 ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
-            }],
-        'unused-imports/no-unused-imports': 'error',
-        'import/order': [
-            'error',
-            {
-                pathGroups: [
-                    {
-                        pattern: '@/**',
-                        group: 'internal',
-                        position: 'after',
-                    },
-                    {
-                        pattern: './**.module.*',
-                        group: 'internal',
-                        position: 'after',
-                    },
-                ],
-                'newlines-between': 'always',
-                alphabetize: {
-                    order: 'asc',
-                    caseInsensitive: false,
-                },
             },
         ],
+        'unused-imports/no-unused-imports': 'error',
+        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
+        // 'import/order': [
+        //     'error',
+        //     {
+        //         pathGroups: [
+        //             {
+        //                 pattern: '@/**',
+        //                 group: 'internal',
+        //                 position: 'after',
+        //             },
+        //             {
+        //                 pattern: './**.module.*',
+        //                 group: 'internal',
+        //                 position: 'after',
+        //             },
+        //         ],
+        //         'newlines-between': 'always',
+        //         alphabetize: {
+        //             order: 'asc',
+        //             caseInsensitive: false,
+        //         },
+        //     },
+        // ],
     },
     globals: {
         __IS_DEV__: true,

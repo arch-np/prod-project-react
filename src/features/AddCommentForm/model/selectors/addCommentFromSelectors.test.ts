@@ -9,7 +9,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('addCommentFromSelectors.test', () => {
     test('should return error', () => {
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             addCommentForm: {
                 error: 'error',
             },
@@ -18,12 +18,12 @@ describe('addCommentFromSelectors.test', () => {
     });
 
     test('should work with empty state', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getAddCommentFormError(state as StateSchema)).toEqual(undefined);
     });
 
     test('should return form text', () => {
-        const state:DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             addCommentForm: {
                 text: 'text',
             },
@@ -31,7 +31,7 @@ describe('addCommentFromSelectors.test', () => {
         expect(getAddCommentFormText(state as StateSchema)).toEqual('text');
     });
     test('should work with empty state', () => {
-        const state:DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getAddCommentFormText(state as StateSchema)).toEqual('');
     });
 });

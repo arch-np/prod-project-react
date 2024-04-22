@@ -9,7 +9,10 @@ import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
@@ -20,7 +23,7 @@ interface ArticlesPageProps {
     className?: string;
 }
 
-const reducers:ReducersList = {
+const reducers: ReducersList = {
     articlesPage: articlesPageReducer,
 };
 const ArticlesPage = (props: ArticlesPageProps) => {
@@ -40,11 +43,12 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
+                data-testid={'ArticlesPage'}
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                <ArticlesPageFilters/>
-                <ArticleInfiniteList className={cls.listArticles}/>
+                <ArticlesPageFilters />
+                <ArticleInfiniteList className={cls.listArticles} />
             </Page>
         </DynamicModuleLoader>
     );

@@ -4,7 +4,10 @@ import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AnimationProvider, useAnimationModules } from '@/shared/lib/components/AnimationProvider';
+import {
+    AnimationProvider,
+    useAnimationModules,
+} from '@/shared/lib/components/AnimationProvider';
 
 import cls from './Drawer.module.scss';
 
@@ -13,19 +16,13 @@ interface DrawerProps {
     children: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
-    lazy?:boolean
+    lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
 
 const DrawerContent = memo((props: DrawerProps) => {
-    const {
-        className,
-        children,
-        onClose,
-        isOpen,
-        lazy,
-    } = props;
+    const { className, children, onClose, isOpen, lazy } = props;
 
     const { Spring, Gesture } = useAnimationModules();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
@@ -72,7 +69,10 @@ const DrawerContent = memo((props: DrawerProps) => {
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
         },
     );
 
@@ -80,7 +80,7 @@ const DrawerContent = memo((props: DrawerProps) => {
         return null;
     }
 
-    const display = y.to(py => (py < height ? 'block' : 'none'));
+    const display = y.to((py) => (py < height ? 'block' : 'none'));
 
     return (
         <Portal>
@@ -88,7 +88,11 @@ const DrawerContent = memo((props: DrawerProps) => {
                 <Overlay onClick={close} />
                 <Spring.a.div
                     className={cls.sheet}
-                    style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+                    style={{
+                        display,
+                        bottom: `calc(-100vh + ${height - 100}px)`,
+                        y,
+                    }}
                     {...bind()}
                 >
                     {children}
@@ -105,9 +109,7 @@ const DrawerAsync = (props: DrawerProps) => {
         return null;
     }
 
-    return (
-        <DrawerContent {...props} />
-    );
+    return <DrawerContent {...props} />;
 };
 
 export const Drawer = (props: DrawerProps) => (
@@ -115,4 +117,3 @@ export const Drawer = (props: DrawerProps) => (
         <DrawerAsync {...props} />
     </AnimationProvider>
 );
-

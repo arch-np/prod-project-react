@@ -6,7 +6,13 @@ const meta = {
     title: 'shared/ListBox',
     component: ListBox,
     tags: ['autodocs'],
-    decorators: [(Story:StoryFn) => <div style={{ padding: '200px' }}><Story/></div>],
+    decorators: [
+        (Story: StoryFn) => (
+            <div style={{ padding: '200px' }}>
+                <Story />
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof ListBox>;
 
 export default meta;

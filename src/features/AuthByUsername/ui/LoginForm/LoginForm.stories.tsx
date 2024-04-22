@@ -24,32 +24,38 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {},
 
-    decorators: [storeDecorator({
-        loginForm: {
-            username: '123',
-            password: 'asfsa',
-        },
-    })],
+    decorators: [
+        storeDecorator({
+            loginForm: {
+                username: '123',
+                password: 'asfsa',
+            },
+        }),
+    ],
 };
 
 export const WithError: Story = {
     args: {},
 
-    decorators: [storeDecorator({
-        loginForm: {
-            username: '123',
-            password: 'asfsa',
-            error: 'Error',
-        },
-    })],
+    decorators: [
+        storeDecorator({
+            loginForm: {
+                username: '123',
+                password: 'asfsa',
+                error: 'Error',
+            },
+        }),
+    ],
 };
 
 export const Loading: Story = {
     args: {},
 
-    decorators: [storeDecorator({
-        loginForm: {
-            isLoading: true,
-        },
-    })],
+    decorators: [
+        storeDecorator({
+            loginForm: {
+                isLoading: true,
+            },
+        }),
+    ],
 };

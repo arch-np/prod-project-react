@@ -5,9 +5,7 @@ import { CurrencySelect } from './CurrencySelect';
 const meta = {
     title: 'entities/CurrencySelect',
     component: CurrencySelect,
-    args: {
-
-    },
+    args: {},
     tags: ['autodocs'],
 } satisfies Meta<typeof CurrencySelect>;
 
