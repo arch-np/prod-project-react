@@ -1333,6 +1333,10 @@
             "username": "admin",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://www.plugincim.com/assets/images/products/csgo-plugin-listesi/362.png"
         },
         {
@@ -1340,6 +1344,10 @@
             "username": "user",
             "password": "123",
             "roles": ["USER"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": false
+            },
             "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
         },
         {
@@ -1347,6 +1355,10 @@
             "username": "manager",
             "password": "123",
             "roles": ["MANAGER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            },
             "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
         },
         {
@@ -1354,6 +1366,10 @@
             "username": "testUser",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://www.plugincim.com/assets/images/products/csgo-plugin-listesi/362.png"
         }
     ],
