@@ -1394,9 +1394,10 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_green_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://www.plugincim.com/assets/images/products/csgo-plugin-listesi/362.png"
     },
@@ -1430,9 +1431,10 @@
         "isCounterEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_green_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "settingsPageHasBeenOpen": false,
+        "isArticlesPageWasOpened": true
       },
       "avatar": "https://cdn0.iconfinder.com/data/icons/kameleon-free-pack-rounded/110/Hacker-1024.png"
     },
