@@ -43,8 +43,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         off: () => <Card>{t('Оценка статей появится позже')}</Card>,
     });
 
-    console.log('New');
-
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page
