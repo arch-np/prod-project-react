@@ -1379,6 +1379,12 @@
       "userId": "1",
       "text": "rgffdgd",
       "id": "pUtfXk3"
+    },
+    {
+      "articleId": "21",
+      "userId": "1",
+      "text": "sdfgsdgsdgds",
+      "id": "ODmCU_f"
     }
   ],
   "users": [
@@ -1463,7 +1469,7 @@
       "first": "Archy2",
       "lastname": "Fut",
       "age": 36,
-      "currency": "USD",
+      "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
       "username": "admin",
