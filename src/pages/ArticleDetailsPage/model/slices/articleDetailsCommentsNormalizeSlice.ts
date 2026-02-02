@@ -13,13 +13,14 @@ import { Comment } from '@/entities/Comment';
 // Используется нормализация данных
 // https://redux-toolkit.js.org/api/createEntityAdapter
 
-const commentsAdapter = createEntityAdapter<Comment>({
+const commentsAdapter = createEntityAdapter<Comment, string>({
     selectId: (comment) => comment.id,
 });
 
+const initialState = commentsAdapter.getInitialState();
+
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) =>
-        state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
+    (state) => state.articleDetailsPage?.comments ?? initialState,
 );
 
 const articleDetailsCommentsNormalizeSlice = createSlice({

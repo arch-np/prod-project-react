@@ -9,15 +9,15 @@ import { Article } from '@/entities/Article';
 // Используется нормализация данных
 // https://redux-toolkit.js.org/api/createEntityAdapter
 
-const recommendationsAdapter = createEntityAdapter<Article>({
+const recommendationsAdapter = createEntityAdapter<Article, string>({
     selectId: (article) => article.id,
 });
 
+const initialState = recommendationsAdapter.getInitialState();
+
 export const getArticleRecommendations =
     recommendationsAdapter.getSelectors<StateSchema>(
-        (state) =>
-            state.articleDetailsPage?.recommendations ||
-            recommendationsAdapter.getInitialState(),
+        (state) => state.articleDetailsPage?.recommendations ?? initialState,
     );
 
 const articleDetailsPageRecommendationsSlice = createSlice({

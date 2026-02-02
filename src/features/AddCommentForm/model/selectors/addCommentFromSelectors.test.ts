@@ -1,5 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
-
 import {
     getAddCommentFormError,
     getAddCommentFormText,

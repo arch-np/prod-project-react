@@ -4,7 +4,7 @@ import { Article } from '@/entities/Article';
 
 // https://redux.js.org/usage/structuring-reducers/normalizing-state-shape
 export interface ArticleDetailsRecommendationsSchema
-    extends EntityState<Article> {
+    extends EntityState<Article, string> {
     isLoading?: boolean;
     error?: string;
 }

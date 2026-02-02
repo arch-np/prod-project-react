@@ -16,12 +16,14 @@ import { SortOrder } from '@/shared/types/sort';
 // Используется нормализация данных
 // https://redux-toolkit.js.org/api/createEntityAdapter
 
-const articlesAdapter = createEntityAdapter<Article>({
+const articlesAdapter = createEntityAdapter<Article, string>({
     selectId: (article) => article.id,
 });
 
+const initialState = articlesAdapter.getInitialState();
+
 export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesPage || articlesAdapter.getInitialState(),
+    (state) => state.articlesPage ?? initialState,
 );
 
 const articlesPageSlice = createSlice({

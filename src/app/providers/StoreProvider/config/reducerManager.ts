@@ -24,7 +24,7 @@ export function createReducerManager(
     return {
         getReducerMap: () => reducers,
         getMountedReducers: () => mountedReducers,
-        reduce(state: StateSchema, action: AnyAction) {
+        reduce(state: StateSchema, action: AnyAction): StateSchema {
             if (keysToRemove.length > 0) {
                 state = { ...state };
                 keysToRemove.forEach((key) => {
@@ -33,7 +33,7 @@ export function createReducerManager(
                 keysToRemove = [];
             }
 
-            return combinedReducer(state, action);
+            return combinedReducer(state as any, action) as StateSchema;
         },
         add(key: StateSchemaKey, reducer: Reducer) {
             if (!key || reducers[key]) {

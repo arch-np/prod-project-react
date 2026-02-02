@@ -9,7 +9,7 @@ import { Profile } from '@/entities/Profile';
 
 export const updateProfileData = createAsyncThunk<
     Profile,
-    void,
+    undefined,
     ThunkConfig<ValidateProfileError[]>
 >('profile/updateProfileData', async (_, thunkApi) => {
     const { extra, rejectWithValue, getState } = thunkApi;
