@@ -2,22 +2,14 @@ import path from 'path';
 
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 
-import { buildCssLoader } from '../build/loaders/buildCssLoader';
-import { BuildPaths } from '../build/types/config';
 export default ({ config }: { config: webpack.Configuration }) => {
-    const paths: BuildPaths = {
-        build: '',
-        html: '',
-        entry: '',
-        src: path.resolve(__dirname, '..', '..', 'src'),
-        locales: '',
-        buildLocales: '',
-    };
-    config!.resolve!.modules!.push(paths.src);
+    const src = path.resolve(__dirname, '..', '..', 'src');
+
+    config!.resolve!.modules!.push(src);
     config!.resolve!.extensions!.push('.ts', '.tsx');
     config!.resolve!.alias = {
         ...config!.resolve!.alias,
-        '@': paths.src,
+        '@': src,
     };
 
     // @ts-ignore
@@ -34,7 +26,25 @@ export default ({ config }: { config: webpack.Configuration }) => {
         use: ['@svgr/webpack'],
     });
 
-    config!.module!.rules.push(buildCssLoader(true));
+    config!.module!.rules.push({
+        test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
+        use: [
+            'style-loader',
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: {
+                        auto: (resPath: string) =>
+                            Boolean(resPath.includes('.module.')),
+                        localIdentName:
+                            '[path][name]__[local]--[hash:base64:5]',
+                    },
+                },
+            },
+            'sass-loader',
+        ],
+    });
 
     config!.plugins!.push(
         new DefinePlugin({
